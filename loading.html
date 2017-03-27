@@ -9,8 +9,34 @@
 	<meta name="Description" content="" />
 	<meta name="Keywords" content="" />
 	<title>title</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
 	</head>
 <body>
+<div class="loading">
+		<div class="ico">
+			<i></i>
+			<span><img src="images/loading.png" width="89" height="14" /></span>
+		</div>
+	</div>
+
+
+	<div class="home">
+		<h1>
+			<img src="images/home-title.png" width="106" height="43" alt=""/>
+		</h1>
+		<div class="panel"></div>
+	</div>
+	<div id="skroller-body">
+		
+
+	</div>
 <script src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+	//loading
+	$(window).on('load', function() {
+		     $('.loading').fadeOut();
+			 $('.home').show().addClass('ready');
+	});
+</script>
 </body>
 </html>
