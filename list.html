@@ -35,63 +35,8 @@
 
 		
 		<script src="js/jquery-1.10.1.min.js"></script>
-		<script src="js/skrollr.min.js"></script>
+		<!-- <script src="js/skrollr.min.js"></script> -->
 		<script>
-			/*分享文案 需域名支持*/
-			var shareInfo  = {
-				'url'	:	'页面链接', //分享链接
-				'desc'	:	'分享文案', //分享文案
-				'title'	:	'标题',//标题
-                'imgurl': '' //图片分享链接
-			};
-			function setSkrollr(){
-				// 距离配置
-				var disCfg = {
-					screen: 2000
-				};
-				window.mySkrollr = skrollr.init({
-					smoothScrolling: true,
-					smoothScrollingDuration: 200,
-					mobileDeceleration: 0.008,
-					constants: {
-						screen01: disCfg.screen * 0,
-						screen02: disCfg.screen * 1,
-						screen03: disCfg.screen * 2,
-						screen04: disCfg.screen * 3,
-						screen05: disCfg.screen * 4
-					},
-					keyframe: function(element, name, direction) {
-						var node = $(element);
-						if (node && node.length) {
-							var event = node.attr('data-event').toLowerCase();
-							switch(event){
-								/*显示首页*/
-								case 'showhomepage':
-									if(direction == 'up'){
-										$('.home').removeClass('closed').addClass('ready');
-									}
-									if(direction == 'down'){
-										$('.home').addClass('closed').removeClass('ready');
-									}
-									break;
-								case 'hidearrowtips':
-									if(direction == 'up'){
-										$('.ico-arrow').fadeIn();
-									}
-									if(direction == 'down'){
-										$('.ico-arrow').fadeOut();
-									}
-									break;
-							}
-
-						}
-					},
-					render: function(data) {
-						//Log the current scroll position.
-						//console.log(data.curTop);
-					}
-				});
-			}
 			$(window).on('load', function() {
 				/*隐藏loading层*/
 				$('.loading').fadeOut();
@@ -99,14 +44,7 @@
 				/*进入内容页*/
 				$('.home').on('touchstart',function(e){
                     $('#skroller-body').show();
-                    setSkrollr();
                     $(this).removeClass('ready').addClass('closed');
-                    setTimeout(function(){
-                        window.mySkrollr.animateTo(200, {
-                            duration: 500,
-                            easing: 'swing'
-                        })
-                    }, 1000);
 				});
 			});
 		</script>
