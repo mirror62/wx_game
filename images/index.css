@@ -1,0 +1,68 @@
+/* ::::: http://www.changyou.com/events/201503/future/css/style.css ::::: */
+
+html { font-size: 62.5%; }
+ul, li, div, p, body, h1, h2, h3, h4, h5, h6, dl, dt, dd { margin: 0px; padding: 0px; -moz-user-select: none; text-align: left; }
+* { outline: medium none; }
+body, html { width: 100%; font-family: "Microsoft YaHei","Helvetica Neue",Arial,HelveticaNeue,Helvetica,"BBAlpha Sans",sans-serif; font-weight: normal; }
+body { opacity: 1; transition: opacity 500ms ease-in 0s; background: rgb(0, 0, 0) none repeat scroll 0% 0%; }
+html { position: relative; width: 100%; height: 100%; }
+body { position: relative; width: 100%; height: 100%; min-width: 320px; max-width: 414px; margin: 0px auto; overflow: hidden; }
+.loading { position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; background: transparent url('loading-bg.jpg') no-repeat scroll 50% 100% / cover ; z-index: 99; }
+.loading .ico { position: absolute; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0px); color: rgb(42, 224, 255); }
+.loading i { display: block; width: 11rem; height: 12.7rem; background: transparent url('loading-pic.png') no-repeat scroll 0px 0px / contain ; animation: 2s linear 0ms normal none infinite running rotate; }
+.loading span { display: block; text-align: center; margin-top: -1rem; animation: 1.5s linear 0ms normal none infinite running flash; }
+.home { display: none; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 10; background: transparent url('home-bg.jpg') no-repeat scroll 50% 100% / cover ; transform-origin: 50% 80% 0px; }
+.home h1 { position: absolute; left: 50%; bottom: 17rem; transform: translate3d(-50%, 0px, 0px); }
+.home h1 img { opacity: 0; }
+.home .circle i:nth-child(2) { background-color: rgba(49, 253, 255, 0.44); animation: 1.5s linear 1s normal none infinite running zoomIn; opacity: 0; }
+.home .panel { position: absolute; left: 50%; bottom: 0px; transform: translate3d(-50%, 0px, 0px); width: 10rem; height: 12.4rem; background: transparent url('home-panel.png') no-repeat scroll 0px 0px / cover ; }
+.home.ready h1 img { animation: 1s ease 0.5s normal both 1 running fadeInUp; }
+#skroller-body { display: none; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 1; pointer-events: auto; }
+#skroller-body div, #skroller-body i, #skroller-body img { position: absolute; }
+.screen-run { position: relative; width: 100%; height: 100%; }
+.bg-1-end { top: 56.8rem; background: transparent url('screen-1-bg.jpg') no-repeat scroll 50% 100%; }
+.bg-2-end { top: 214.9rem; background: transparent url('screen-2-bg.jpg') no-repeat scroll 50% 100%; }
+.bg-3-end { top: 373rem; background: transparent url('screen-3-bg.jpg') no-repeat scroll 50% 100%; }
+.bg-4-end { top: 531.1rem; background: transparent url('screen-4-bg.jpg') no-repeat scroll 50% 100%; }
+.bg { width: 100%; height: 56.8rem; background: transparent url('parallax-bg.jpg') no-repeat scroll 50% 0px / cover ; }
+.bg:nth-child(1) { top: 0px; }
+.bg:nth-child(2) { top: 158.1rem; }
+.bg:nth-child(3) { top: 316.2rem; }
+.bg:nth-child(4) { top: 474.3rem; }
+.bg:nth-child(5) { width: 100%; height: 100%; top: 632.4rem; background: transparent url('last-page.jpg') no-repeat scroll 50% 0px / cover ; transform-origin: 50% 80% 0px; }
+.bg-1-end, .bg-2-end, .bg-3-end, .bg-4-end { width: 100%; height: 101.3rem; background-size: cover; }
+.text-pic { width: 100%; }
+.text-pic img { left: 50%; transform: translate3d(-50%, 0px, 0px); }
+.text-pic img:nth-child(2) { top: 16.8rem; }
+.text-pic img.xianjian { top: 11.08rem; }
+.text-pic img.haizhan { top: 14.08rem; }
+.text-pic img.ssj { top: 13.8rem; }
+.text-pic img.conference2 { top: -0.02rem; }
+.text-pic img.conference3 { top: 23.8rem; }
+.con-bg { position: relative ! important; width: 10.1rem; height: 36.9rem; background: transparent url('parallax-con-bg.png') no-repeat scroll 0px 0px / 30.3rem 36.9rem; transform-origin: 50% 50% 0px; }
+.con-bg-1 { background-position: 0px 0px; transform: rotate(45deg); }
+.con-bg-2 { background-position: 50% 0px; transform: rotate(-45deg); }
+.con-bg-3 { background-position: 100% 0px; transform: rotate(45deg); }
+.mod-odd { right: 50%; }
+.mod-even { left: 50%; }
+.ico-triangle { position: absolute; top: 0px; width: 5.6rem; height: 5.4rem; z-index: 9; }
+.ico-triangle .triangle { position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; }
+.ico-triangle .triangle i { display: block; width: 5.6rem; height: 5.4rem; background: transparent url('triangle.png') no-repeat scroll 0px 0px / contain ; animation: 6s ease 0s normal none infinite running rotate; }
+.ico-triangle .triangle:last-child { transform: translate3d(5%, 19%, 0px); }
+.ico-triangle .triangle:last-child i { animation: 6s ease 0.1s normal none infinite running rotate; }
+.ico-triangle.odd { left: 0px; }
+.ico-triangle.odd .triangle i { animation-delay: 2s; }
+.ico-triangle.odd .triangle:last-child i { animation-delay: 2.1s; }
+.ico-triangle.even { right: 0px; }
+.ico-arrow { left: 50%; bottom: 2rem; transform: translate3d(-50%, 0px, 0px); z-index: 10; }
+.ico-arrow i { position: relative ! important; display: block; width: 49px; height: 45px; background: transparent url('next-tips.png') no-repeat scroll 0px 0px / cover ; animation: 2s ease 0.1s normal none infinite running fadeOutDown; }
+.rotate-icon { width: 10.5rem; height: 11.3rem; }
+.rotate-icon .solid { background: transparent url('rotate-solid-1.png') no-repeat scroll 0% 0% / cover ; width: 0.15rem; height: 12.75rem; }
+.rotate-icon .radius { left: 4.2rem; top: 1.8rem; background: transparent url('rotate-radius-1.png') no-repeat scroll 0% 0% / cover ; width: 0.5rem; height: 0.5rem; animation: 6s ease 2s normal none infinite running flash; }
+.rotate-icon .triangle { left: 2rem; top: 0rem; }
+.rotate-icon .triangle::before { width: 3.7rem; height: 4rem; left: 0.8rem; background: transparent url('rotate-triangle-1.png') no-repeat scroll 50% 50% / cover ; content: ""; display: block; position: absolute; animation: 2s linear 0s normal none infinite running anticlockwise; }
+.rotate-icon .two { width: 10.5rem; height: 11.3rem; transform: rotate(180deg); }
+.rotate-icon .three { width: 10.5rem; overflow: hidden; height: 6.3rem; }
+.lf1 { top: 2rem; }
+.rt1 { right: -23rem; top: 8rem; }
+.rt2 { right: -4rem; bottom: -5rem; }
