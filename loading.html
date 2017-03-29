@@ -27,11 +27,42 @@
         <div class="panel"></div>
     </div>
     <div id="skroller-body">
-        a
+        <div class="screen-run" data-_screen01-0="transform: translate3d(0, 0rem, 0);" data-_screen01-655="transform: translate3d(0, -15rem, 0);" data-_screen02-0="transform: translate3d(0, -157rem, 0);" data-_screen02-655="transform: translate3d(0, -172rem, 0);" data-_screen03-0="transform: translate3d(0, -314rem, 0);" data-_screen03-655="transform: translate3d(0, -329rem, 0);" data-_screen04-0="transform: translate3d(0,-471rem, 0);" data-_screen04-655="transform: translate3d(0, -486rem, 0);" data-_screen05-0="transform: translate3d(0,-628rem, 0);" data-_screen05-655="transform: translate3d(0,-632rem, 0);">
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg-1-end"></div>
+            <div class="bg-2-end"></div>
+            <div class="bg-3-end"></div>
+            <div class="bg-4-end"></div>
+        </div>
+        <div class="mod-odd" data-_screen01-0="transform[swing]: translate3d(-32rem, 65rem, 0)" data-_screen01-200="transform: translate3d(-13rem, 29rem, 0);" data-_screen01-800="transform: translate3d(-13rem, -41rem, 0);">
+            <div class="con-bg con-bg-1"></div>
+        </div>
     </div>
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/skrollr.min.js"></script>
     <script type="text/javascript">
+    function setSkrollr() {
+        // 距离配置
+        var disCfg = {
+            screen: 2000
+        };
+        window.mySkrollr = skrollr.init({
+            smoothScrolling: true,
+            smoothScrollingDuration: 200,
+            mobileDeceleration: 0.008,
+            constants: {
+                screen01: disCfg.screen * 0,
+                screen02: disCfg.screen * 1,
+                screen03: disCfg.screen * 2,
+                screen04: disCfg.screen * 3,
+                screen05: disCfg.screen * 4
+            },
+        });
+    }
     //loading
     $(window).on('load', function() {
         $('.loading').fadeOut();
@@ -39,6 +70,7 @@
         /*进入内容页*/
         $('.home').on('touchstart', function(e) {
             $('#skroller-body').show();
+            setSkrollr();
             $(this).removeClass('ready').addClass('closed');
         });
     });

@@ -289,3 +289,103 @@ body {
     z-index: 1;
     pointer-events: auto;
 }
+#skroller-body div,
+#skroller-body i,
+#skroller-body img {
+    position: absolute;
+}
+
+.screen-run {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/*背景 start*/
+
+.bg-1-end {
+    top: 56.8rem;
+    background: url("../images/screen-1-bg.jpg") 50% 100% no-repeat;
+}
+
+.bg-2-end {
+    top: 214.9rem;
+    background: url("../images/screen-2-bg.jpg") 50% 100% no-repeat;
+}
+
+.bg-3-end {
+    top: 373rem;
+    background: url("../images/screen-3-bg.jpg") 50% 100% no-repeat;
+}
+
+.bg-4-end {
+    top: 531.1rem;
+    background: url("../images/screen-4-bg.jpg") 50% 100% no-repeat;
+}
+
+
+/*背景公用样式*/
+
+.bg {
+    width: 100%;
+    height: 56.8rem;
+    background: url("../images/parallax-bg.jpg") 50% 0 no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.bg:nth-child(1) {
+    top: 0;
+}
+
+.bg:nth-child(2) {
+    top: 158.1rem;
+}
+
+.bg:nth-child(3) {
+    top: 316.2rem;
+}
+
+.bg:nth-child(4) {
+    top: 474.3rem;
+}
+
+.bg:nth-child(5) {
+    width: 100%;
+    height: 100%;
+    top: 632.4rem;
+    /*height: 67.8rem;*/
+    background: url("../images/last-page.jpg") 50% 0 no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-transform-origin: 50% 80%;
+    transform-origin: 50% 80%;
+}
+
+.bg-1-end,
+.bg-2-end,
+.bg-3-end,
+.bg-4-end {
+    width: 100%;
+    height: 101.3rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.mod-odd {
+    right: 50%;
+}
+.con-bg {
+    position: relative !important;
+    width: 10.1rem;
+    height: 36.9rem;
+    background: url("../images/parallax-con-bg.png") 0 0 no-repeat;
+    -webkit-background-size: 30.3rem 36.9rem;
+    background-size: 30.3rem 36.9rem;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.con-bg-1 {
+    background-position: 0 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
