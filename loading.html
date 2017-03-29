@@ -1,42 +1,48 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="format-detection" content="telephone=no" />
-	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="Description" content="" />
-	<meta name="Keywords" content="" />
-	<title>title</title>
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	</head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <title>title</title>
+    <link href="css/loading.css" rel="stylesheet" type="text/css" />
+</head>
+
 <body>
-<div class="loading">
-		<div class="ico">
-			<i></i>
-			<span><img src="images/loading.png" width="89" height="14" /></span>
-		</div>
-	</div>
-
-
-	<div class="home">
-		<h1>
+    <div class="loading">
+        <div class="ico">
+            <i></i>
+            <span><img src="images/loading.png" width="89" height="14" /></span>
+        </div>
+    </div>
+    <div class="home">
+        <h1>
 			<img src="images/home-title.png" width="106" height="43" alt=""/>
 		</h1>
-		<div class="panel"></div>
-	</div>
-	<div id="skroller-body">
-		
-
-	</div>
-<script src="js/jquery-1.10.1.min.js"></script>
-<script type="text/javascript">
-	//loading
-	$(window).on('load', function() {
-		     $('.loading').fadeOut();
-			 $('.home').show().addClass('ready');
-	});
-</script>
+        <div class="panel"></div>
+    </div>
+    <div id="skroller-body">
+        a
+    </div>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script src="js/skrollr.min.js"></script>
+    <script type="text/javascript">
+    //loading
+    $(window).on('load', function() {
+        $('.loading').fadeOut();
+        $('.home').show().addClass('ready');
+        /*进入内容页*/
+        $('.home').on('touchstart', function(e) {
+            $('#skroller-body').show();
+            $(this).removeClass('ready').addClass('closed');
+        });
+    });
+    </script>
 </body>
+
 </html>

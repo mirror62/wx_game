@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
+ul,
+li,
+div,
+p,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    text-align: left;
+}
+
+input {
+    -webkit-appearance: button;
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+input {
+    -webkit-appearance: none;
+    outline: none;
+}
+
+* {
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-focus-ring-color: transparent;
+}
+
+.hide {
+    display: none;
+}
+
+body,
+html {
+    width: 100%;
+    font-family: "Microsoft YaHei", "Helvetica Neue", Arial, HelveticaNeue, Helvetica, "BBAlpha Sans", sans-serif;
+    font-weight: normal;
+}
+
+body {
+    opacity: 1;
+    -webkit-transition: opacity 500ms ease-in;
+    transition: opacity 500ms ease-in;
+    background: #000;
+}
+
+p,
+a,
+li {
+    font-size: 1.2rem;
+    color: #434343;
+}
+
+html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+    max-width: 414px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+/*loading*/
+
+.loading {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../images/loading-bg.jpg") 50% 100% no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: 99;
+}
+
+.loading .ico {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    color: #2ae0ff;
+}
+
+.loading i {
+    display: block;
+    width: 11rem;
+    height: 12.7rem;
+    background: url("../images/loading-pic.png") 0 0 no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    -webkit-animation: rotate 2s linear 0ms infinite;
+    animation: rotate 2s linear 0ms infinite;
+}
+
+.loading span {
+    display: block;
+    text-align: center;
+    margin-top: -1rem;
+    -webkit-animation: flash 1.5s linear 0ms infinite;
+    animation: flash 1.5s linear 0ms infinite;
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotateZ(0deg);
+        transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes flash {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+
+/*splash*/
+
+.home {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: url("../images/home-bg.jpg") 50% 100% no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-transform-origin: 50
+}
+
+.home h1 {
+    position: absolute;
+    left: 50%;
+    bottom: 17rem;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+
+.home .panel {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    width: 10rem;
+    height: 12.4rem;
+    background: url("../images/home-panel.png") 0 0 no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.home.ready h1 img {
+    -webkit-animation: fadeInUp 1s ease .5s both;
+    animation: fadeInUp 1s ease .5s both;
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.home.closed {
+    -webkit-transform: scale(4);
+    transform: scale(4);
+    opacity: 0;
+    z-index: 0;
+    -webkit-transition: all 1s, opacity 1s 0.7s, z-index 0s 2s;
+    transition: all 1s, opacity 1s 0.7s, z-index 0s 2s;
+}
+
+.home.closed h1 img,
+.home.closed .panel {
+    -webkit-transition: all .1s;
+    transition: all .1s;
+    opacity: 0;
+}
+
+#skroller-body {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: auto;
+}
