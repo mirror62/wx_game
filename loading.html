@@ -27,6 +27,10 @@
         <div class="panel"></div>
     </div>
     <div id="skroller-body">
+        <!--start-->
+        <div data-50="opacity: 0;" data-event="showHomePage" data-emit-events></div>
+        <div data-_screen04-1000="opacity: 0;" data-event="hideArrowTips" data-emit-events></div>
+        <!--1-->
         <div class="screen-run" data-_screen01-0="transform: translate3d(0, 0rem, 0);" data-_screen01-655="transform: translate3d(0, -15rem, 0);" data-_screen02-0="transform: translate3d(0, -157rem, 0);" data-_screen02-655="transform: translate3d(0, -172rem, 0);" data-_screen03-0="transform: translate3d(0, -314rem, 0);" data-_screen03-655="transform: translate3d(0, -329rem, 0);" data-_screen04-0="transform: translate3d(0,-471rem, 0);" data-_screen04-655="transform: translate3d(0, -486rem, 0);" data-_screen05-0="transform: translate3d(0,-628rem, 0);" data-_screen05-655="transform: translate3d(0,-632rem, 0);">
             <div class="bg"></div>
             <div class="bg"></div>
@@ -41,10 +45,30 @@
         <div class="mod-odd" data-_screen01-0="transform[swing]: translate3d(-32rem, 65rem, 0)" data-_screen01-200="transform: translate3d(-13rem, 29rem, 0);" data-_screen01-800="transform: translate3d(-13rem, -41rem, 0);">
             <div class="con-bg con-bg-1"></div>
         </div>
+        <div class="mod-odd" data-_screen01-0="opacity:0;transform[swing]: translate3d(-22rem, 71.6rem, 0)" data-_screen01-200="opacity:1;transform: translate3d(-12rem, 35.8rem, 0);" data-_screen01-800="opacity:1;transform: translate3d(-12rem, -34.2rem, 0);">
+            <img src="images/parallax-1-text.png" width="71" height="33" />
+        </div>
+        <div class="mod-odd" data-_screen01-0="transform[swing]: translate3d(-59rem, 70rem, 0)" data-_screen01-200="transform: translate3d(-30.3rem, 25rem, 0);" data-_screen01-800="transform: translate3d(-30.3rem, -45rem, 0);">
+            <img src="images/parallax-solid.png" width="393" height="264" />
+        </div>
+        <div class="mod-odd" data-_screen01-0="opacity:0;transform[swing]: translate3d(-7rem, 66rem, 0)" data-_screen01-200="opacity:1;transform: translate3d(-7rem, 22rem, 0);" data-_screen01-800="opacity:1;transform: translate3d(-7rem, -48rem, 0);">
+            <img src="images/parallax-1-header-1-1.png" width="132" height="144" />
+        </div>
+        <div class="mod-even" data-_screen01-200="transform[swing]: translate3d(32rem, 65rem, 0)" data-_screen01-400="transform: translate3d(13rem, 29rem, 0);" data-_screen01-1000="transform: translate3d(13rem, -41rem, 0);">
+            <div class="con-bg con-bg-2"></div>
+        </div>
     </div>
     <script src="js/jquery-1.10.1.min.js"></script>
     <script src="js/skrollr.min.js"></script>
-    <script type="text/javascript">
+    <script>
+    /*分享文案 需域名支持*/
+    // var shareInfo = {
+    //     'url': '页面链接', //分享链接
+    //     'desc': '分享文案', //分享文案
+    //     'title': '标题', //标题
+    //     'imgurl': '' //图片分享链接
+    // };
+
     function setSkrollr() {
         // 距离配置
         var disCfg = {
@@ -61,10 +85,40 @@
                 screen04: disCfg.screen * 3,
                 screen05: disCfg.screen * 4
             },
+            keyframe: function(element, name, direction) {
+                var node = $(element);
+                if (node && node.length) {
+                    var event = node.attr('data-event').toLowerCase();
+                    switch (event) {
+                        /*显示首页*/
+                        case 'showhomepage':
+                            if (direction == 'up') {
+                                $('.home').removeClass('closed').addClass('ready');
+                            }
+                            if (direction == 'down') {
+                                $('.home').addClass('closed').removeClass('ready');
+                            }
+                            break;
+                        case 'hidearrowtips':
+                            if (direction == 'up') {
+                                $('.ico-arrow').fadeIn();
+                            }
+                            if (direction == 'down') {
+                                $('.ico-arrow').fadeOut();
+                            }
+                            break;
+                    }
+
+                }
+            },
+            render: function(data) {
+                //Log the current scroll position.
+                //console.log(data.curTop);
+            }
         });
     }
-    //loading
     $(window).on('load', function() {
+        /*隐藏loading层*/
         $('.loading').fadeOut();
         $('.home').show().addClass('ready');
         /*进入内容页*/
@@ -72,6 +126,16 @@
             $('#skroller-body').show();
             setSkrollr();
             $(this).removeClass('ready').addClass('closed');
+            setTimeout(function() {
+                window.mySkrollr.animateTo(200, {
+                    duration: 500,
+                    easing: 'swing'
+                })
+            }, 1000);
+            /*播放背景音乐*/
+            // var playAudio = document.getElementById("playAudio");
+            // playAudio.play();
+            // e.preventDefault()
         });
     });
     </script>
