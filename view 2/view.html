@@ -696,6 +696,8 @@ aside.slide-wrapper {
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+     overflow: hidden;
+     display: none;
 }
 
 aside.slide-wrapper > div {
@@ -1106,7 +1108,51 @@ aside.slide-wrapper li a.first,
 
         </style>
         <script type="text/javascript" src="http://syz.sjsedu.cn/portals/33/wap/jquery.min.js"></script>
-        <script type="text/javascript" src="http://syz.sjsedu.cn/portals/33/wap/index.js"></script>
+        <script type="text/javascript">
+            var jq = jQuery.noConflict();
+jq(function() {
+    jq('aside.slide-wrapper').on('touchstart', 'li', function(e) {
+        jq(this).addClass('current').siblings('li').removeClass('current');
+    });
+
+    jq('a.slide-menu').on('click', function(e) {
+        var wh = jq('div.wrapper').height();
+        jq('div.slide-mask').css('height', wh).show();
+        jq('aside.slide-wrapper').css('height', wh).addClass('moved');
+        jq('aside.slide-wrapper').show();
+    });
+
+    jq('div.slide-mask').on('click', function() {
+        jq('div.slide-mask').hide();
+        jq('aside.slide-wrapper').removeClass('moved');
+        jq('aside.slide-wrapper').hide();
+    });
+
+    //杩斿洖椤堕儴
+    var BACK_TOP = jq(".backtop");
+    BACK_TOP.click(function() {
+        jq(window).scrollTop(0)
+    })
+
+
+    var index_backtop = jq(".index_backtop");
+    jq(window).scroll(function() {
+        var limit_btnBackTop_showHeight = (jq(window).height() - 500);
+        // console.log(jq(window).scrollTop()+"dddd="+limit_btnBackTop_showHeight);
+        if (jq(window).scrollTop() > limit_btnBackTop_showHeight) {
+            index_backtop.show();
+        } else {
+            index_backtop.hide();
+        }
+    })
+    index_backtop.click(function() {
+        jq(window).scrollTop(0)
+    })
+
+
+
+});
+        </script>
 
 
 
